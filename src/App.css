@@ -4,18 +4,29 @@
 }
 
 body {
-  background-color: #020631;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(88,254,73,1) 30%, rgba(253,187,45,0.6651270207852193) 100%);
+  
 }
 
 .app {
+  height: 24em;
+  width: 42em;
   position: absolute;
-  top: 10%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -10%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #8BC6EC;
+background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
+  
+  padding: 1em;
+  border-radius: 0.25em;
+  
 }
 
 .app .mainHeading h1 {
@@ -90,3 +101,24 @@ h2 {
   color: grey;
 }
 
+.app .completed{
+  background-color: #FBAB7E;
+background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+   margin : 1em ;
+   padding:1em;
+   border-radius: 7px;
+   min-width: 339px;
+  
+}
+
+.app .completed-list{
+  
+   margin : 1em ;
+   padding:1em;
+   border-radius: 7px;
+}
+
+h4{
+  margin-bottom:1em;
+}

@@ -8,12 +8,13 @@ function App() {
   const[Todo,SetTodo] = useState('')            // making a state to store the values of the arrays
   return (
     <div className="app">
+      <img src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/64/000000/external-list-grocery-flatart-icons-lineal-color-flatarticons.png"/>
       <div className="mainHeading">
-        <h1>ToDo List</h1>
+        <h1>ToDo List </h1>
+        
       </div>
       <div className="subHeading">
         <br />
-        <h2>Whoop, it's Wednesday 🌝 ☕ </h2>
       </div>
       <div className="input">
         <input type="text" value={Todo} onChange={(e)=>SetTodo(e.target.value)} placeholder="Add item..." />
@@ -28,8 +29,6 @@ function App() {
             <div className="todo">
             <div className="left">
               <input onChange={(e)=>{
-                console.log(e.target.checked)
-                console.log(obj)
                 SetTodoList(TodoList.filter(obj2=>{
                   if(obj2.id===obj.id){
                     obj.status = e.target.checked
@@ -40,21 +39,42 @@ function App() {
               <p>{obj.text}</p>
             </div>
             <div className="right">
-              <i className="fas fa-times"></i>
+
+
+              <i className="fas fa-times" onClick={(e)=>{  // delete functionality
+                SetTodoList(TodoList.filter(obj2=>{
+                  let temp;
+                  if(obj2.id!=obj.id){
+                    temp = obj2
+                  }
+                  return temp;
+                }))
+              }}></i>
             </div>
           </div>
           )
         })}
 
+        <div className='completed'>
+        <h2>completed taskes</h2>
+      
+      <div className='completed-list'>
+
         {TodoList.map((obj)=>{
           if(obj.status){
             return(
-              <h1>{obj.text}</h1>
-            )
-            return null
-          }
-        })}
+              <h4>{obj.text}</h4>
+              )
+              return null
+            }
+          })}
    
+          </div>
+        </div>
+
+        {/* <button onClick={()=>{
+          SetTodoList(TodoList.)
+        }}>clear</button> */}
 
       </div>
     </div>
